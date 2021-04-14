@@ -20,16 +20,6 @@ router.get("/login", (req: Request, res: Response) => {
   res.sendFile("login.html", { root: __dirname });
 });
 
-router.post("/login", (req: RequestWithBody, res: Response) => {
-  const { email, password } = req.body;
-
-  if (email && password && email === "test@one" && password === "mpilo") {
-    req.session = { loggedIn: true };
-    res.redirect("/");
-  } else {
-  }
-});
-
 router.get("/", (req: Request, res: Response) => {
   if (req.session && req.session.loggedIn) {
     res.send(`
