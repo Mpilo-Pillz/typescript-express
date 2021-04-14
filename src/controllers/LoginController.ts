@@ -11,6 +11,11 @@ interface RequestWithBody extends Request {
 // }
 @controller("/auth")
 class LoginController {
+  //checkout the routeHandlerDEscriptor to catch the func bellow that causes server to hang
+  // @get("/")
+  // add(a: number, b: number) :number{
+  //   return a + b
+  // }
   @get("/login")
   getLogin(req: Request, res: Response): void {
     console.log("clicked");
